@@ -23,8 +23,9 @@ package com.amazonaws.athena.udf.textanalytics;
 import com.amazonaws.athena.connector.lambda.handlers.UserDefinedFunctionHandler;
 import com.amazonaws.services.lambda.runtime.Context;
 
-public class ProtectorsFederationUDFHandler extends UserDefinedFunctionHandler
-{
+import java.util.logging.Logger;
+
+public class ProtectorsFederationUDFHandler extends UserDefinedFunctionHandler {
     private static final String SOURCE_TYPE = "athena_protectors_caller";
     public static int maxTextBytes = 5000;  //utf8 bytes
     public static int maxBatchSize = 25;
@@ -32,6 +33,7 @@ public class ProtectorsFederationUDFHandler extends UserDefinedFunctionHandler
     private LambdaInvoker lambdaInvokerClient;
 
     private Context context;
+    private Logger log;
 
     public ProtectorsFederationUDFHandler(final String sourceType, final Context context) {
         super(sourceType);
@@ -51,6 +53,7 @@ public class ProtectorsFederationUDFHandler extends UserDefinedFunctionHandler
     }
 
     public String decrypt(String message) throws Exception {
+        this.context.getLogger().log("user context " + this.context);
         return this.lambdaInvokerClient().decrypt(new ProtectorsDecryptMessageRequest(message));
     }
 
