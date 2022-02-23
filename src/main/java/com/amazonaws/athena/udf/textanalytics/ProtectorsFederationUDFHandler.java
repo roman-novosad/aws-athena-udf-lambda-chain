@@ -20,20 +20,22 @@
 
 package com.amazonaws.athena.udf.textanalytics;
 
-import com.amazonaws.athena.connector.lambda.handlers.UserDefinedFunctionHandler;
+import com.amazonaws.athena.connector.lambda.data.BlockAllocator;
+import com.amazonaws.athena.connector.lambda.handlers.IdentityAwareUserDefinedFunctionHandler;
+import com.amazonaws.athena.connector.lambda.security.FederatedIdentity;
+import com.amazonaws.athena.connector.lambda.udf.UserDefinedFunctionRequest;
+import com.amazonaws.athena.connector.lambda.udf.UserDefinedFunctionResponse;
 import com.amazonaws.services.lambda.runtime.Context;
+import com.amazonaws.services.lambda.runtime.LambdaLogger;
 
-import java.util.logging.Logger;
+public class ProtectorsFederationUDFHandler extends IdentityAwareUserDefinedFunctionHandler {
 
-public class ProtectorsFederationUDFHandler extends UserDefinedFunctionHandler {
     private static final String SOURCE_TYPE = "athena_protectors_caller";
-    public static int maxTextBytes = 5000;  //utf8 bytes
-    public static int maxBatchSize = 25;
-
     private LambdaInvoker lambdaInvokerClient;
 
     private Context context;
-    private Logger log;
+    private LambdaLogger log;
+    private FederatedIdentity identity;
 
     public ProtectorsFederationUDFHandler(final String sourceType, final Context context) {
         super(sourceType);
@@ -46,15 +48,23 @@ public class ProtectorsFederationUDFHandler extends UserDefinedFunctionHandler {
 
     private LambdaInvoker lambdaInvokerClient() {
         if (this.lambdaInvokerClient == null) {
-            System.out.println("Creating Lambda Invoker Client");
             this.lambdaInvokerClient = new LambdaInvoker();
         }
         return this.lambdaInvokerClient;
     }
 
+
+    @Override
+    protected UserDefinedFunctionResponse processScalarFunction(BlockAllocator allocator, UserDefinedFunctionRequest req)
+            throws Exception {
+
+        this.identity = req.getIdentity();
+        return super.processScalarFunction(allocator, req);
+    }
+
     public String decrypt(String message) throws Exception {
-        this.context.getLogger().log("user context " + this.context);
-        return this.lambdaInvokerClient().decrypt(new ProtectorsDecryptMessageRequest(message));
+        return this.lambdaInvokerClient()
+                .decrypt(new ProtectorsDecryptMessageRequest(this.identity, message));
     }
 
 }

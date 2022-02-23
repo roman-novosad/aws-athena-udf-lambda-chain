@@ -1,4 +1,5 @@
 /Users/roman/workspace/skoleni/aws-athena-udfs-textanalytics/athena-udfs-textanalytics/src/main/java/com/amazonaws/athena/udf/textanalytics/ProtectorsFederationUDFHandler.java
+/Users/roman/workspace/skoleni/aws-athena-udfs-textanalytics/athena-udfs-textanalytics/src/main/java/com/amazonaws/athena/udf/textanalytics/IdentityAwareUserDefinedFunctionHandler.java
 /Users/roman/workspace/skoleni/aws-athena-udfs-textanalytics/athena-udfs-textanalytics/src/main/java/com/amazonaws/athena/udf/textanalytics/LambdaInvoker.java
 /Users/roman/workspace/skoleni/aws-athena-udfs-textanalytics/athena-udfs-textanalytics/src/main/java/com/amazonaws/athena/udf/textanalytics/ProtectorsDecryptMessageRequest.java
 /Users/roman/workspace/skoleni/aws-athena-udfs-textanalytics/athena-udfs-textanalytics/src/main/java/com/amazonaws/athena/udf/textanalytics/FederationStreamHandler.java

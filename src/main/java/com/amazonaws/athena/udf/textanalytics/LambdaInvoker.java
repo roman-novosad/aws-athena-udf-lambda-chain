@@ -33,7 +33,7 @@ import java.util.logging.Logger;
 public class LambdaInvoker {
 
     static final Logger logger = Logger.getLogger(LambdaInvoker.class.getName());
-    static final String LambdaFunctionName = "aws-athena-protectors-handler";
+    static final String LambdaFunctionName = "LambdaAthena_py";
 
     private class AsyncLambdaHandler implements AsyncHandler<InvokeRequest, InvokeResult> {
         public void onSuccess(InvokeRequest req, InvokeResult res) {

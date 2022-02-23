@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="8.19">
+<file name="/Users/roman/workspace/skoleni/aws-athena-udfs-textanalytics/athena-udfs-textanalytics/src/main/java/com/amazonaws/athena/udf/textanalytics/IdentityAwareUserDefinedFunctionHandler.java">
+</file>
 <file name="/Users/roman/workspace/skoleni/aws-athena-udfs-textanalytics/athena-udfs-textanalytics/src/main/java/com/amazonaws/athena/udf/textanalytics/ProtectorsFederationUDFHandler.java">
 </file>
 <file name="/Users/roman/workspace/skoleni/aws-athena-udfs-textanalytics/athena-udfs-textanalytics/src/main/java/com/amazonaws/athena/udf/textanalytics/FederationStreamHandler.java">

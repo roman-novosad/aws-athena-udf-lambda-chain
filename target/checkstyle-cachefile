@@ -1,6 +1,7 @@
-#Wed Feb 02 00:45:57 CET 2022
-/Users/roman/workspace/skoleni/aws-athena-udfs-textanalytics/athena-udfs-textanalytics/src/main/java/com/amazonaws/athena/udf/textanalytics/ProtectorsFederationUDFHandler.java=1643700547109
+#Wed Feb 23 18:48:56 CET 2022
+/Users/roman/workspace/skoleni/aws-athena-udfs-textanalytics/athena-udfs-textanalytics/src/main/java/com/amazonaws/athena/udf/textanalytics/ProtectorsFederationUDFHandler.java=1645638525519
 configuration*?=FA171EFEECD0CFCAE9D86A3703D15E6219476C1D
-/Users/roman/workspace/skoleni/aws-athena-udfs-textanalytics/athena-udfs-textanalytics/src/main/java/com/amazonaws/athena/udf/textanalytics/ProtectorsDecryptMessageRequest.java=1643601602966
+/Users/roman/workspace/skoleni/aws-athena-udfs-textanalytics/athena-udfs-textanalytics/src/main/java/com/amazonaws/athena/udf/textanalytics/IdentityAwareUserDefinedFunctionHandler.java=1645635529519
+/Users/roman/workspace/skoleni/aws-athena-udfs-textanalytics/athena-udfs-textanalytics/src/main/java/com/amazonaws/athena/udf/textanalytics/ProtectorsDecryptMessageRequest.java=1645637471983
 /Users/roman/workspace/skoleni/aws-athena-udfs-textanalytics/athena-udfs-textanalytics/src/main/java/com/amazonaws/athena/udf/textanalytics/LambdaInvoker.java=1643601685481
-/Users/roman/workspace/skoleni/aws-athena-udfs-textanalytics/athena-udfs-textanalytics/src/main/java/com/amazonaws/athena/udf/textanalytics/FederationStreamHandler.java=1643759147327
+/Users/roman/workspace/skoleni/aws-athena-udfs-textanalytics/athena-udfs-textanalytics/src/main/java/com/amazonaws/athena/udf/textanalytics/FederationStreamHandler.java=1645637194267

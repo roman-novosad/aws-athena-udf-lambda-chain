@@ -19,28 +19,35 @@
  */
 package com.amazonaws.athena.udf.textanalytics;
 
+import com.amazonaws.athena.connector.lambda.security.FederatedIdentity;
+
 import java.util.UUID;
 
 public class ProtectorsDecryptMessageRequest {
 
     private final String message;
     private final UUID uuid;
+    private final FederatedIdentity identity;
 
-    public ProtectorsDecryptMessageRequest(final String message) {
-        this(UUID.randomUUID(), message);
+    public ProtectorsDecryptMessageRequest(final FederatedIdentity identity, final String message) {
+        this(UUID.randomUUID(), identity, message);
     }
 
-    public ProtectorsDecryptMessageRequest(final UUID uuid, final String message) {
+    public ProtectorsDecryptMessageRequest(final UUID uuid, FederatedIdentity identity, final String message) {
         this.message = message;
+        this.identity = identity;
         this.uuid = uuid;
     }
 
     public UUID getUuid() {
         return uuid;
     }
-    
 
     public String getMessage() {
         return message;
+    }
+
+    public FederatedIdentity getIdentity() {
+        return identity;
     }
 }
