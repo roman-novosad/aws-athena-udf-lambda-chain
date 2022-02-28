@@ -2,8 +2,6 @@ com/amazonaws/athena/udf/textanalytics/ProtectorsFederationUDFHandler.class
 com/amazonaws/athena/connector/lambda/handlers/IdentityAwareUserDefinedFunctionHandler.class
 com/amazonaws/athena/udf/textanalytics/LambdaInvoker$1.class
 com/amazonaws/athena/udf/textanalytics/LambdaInvoker$AsyncLambdaHandler.class
-com/amazonaws/athena/udf/textanalytics/FederationStreamHandler$1.class
 com/amazonaws/athena/udf/textanalytics/LambdaInvoker.class
 com/amazonaws/athena/connector/lambda/handlers/IdentityAwareUserDefinedFunctionHandler$1.class
-com/amazonaws/athena/udf/textanalytics/FederationStreamHandler.class
 com/amazonaws/athena/udf/textanalytics/ProtectorsDecryptMessageRequest.class
